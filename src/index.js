@@ -14,12 +14,12 @@ module.exports = function toReadable (number) {
      if (number < 100 && number % 10 == 0) {
          return tens[number / 10]
      }
-     if (number < 100 && number % 10 != 0) {
-        string = tens[Math.floor(number / 10)];
+    if (number < 100 && number % 10 != 0) {
+        let first = tens[Math.floor(number / 10)];
         let secondString = toNineteen[(number % 10)];
-        return `${string} ${secondString}`;
+        return `${first} ${secondString}`;
      }
-     if (number <= 999 && number % 100 == 0) {
+      if (number <= 999 && number % 100 == 0) {
          return hundreds[Math.floor(number / 100)];
      }
      if (number <= 999 && number % 100 != 0)

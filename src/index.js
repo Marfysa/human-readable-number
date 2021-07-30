@@ -26,7 +26,7 @@ module.exports = function toReadable (number) {
      {
          let newHun = hundreds[Math.floor(number / 100)];
          let newSecond = tens[Math.floor(number / 10) % 10];
-         let newThird = toNineteen[number % 100];
+         let newThird = toNineteen[Math.floor(number / 100)];
          let newEnd = (`${newHun} ${newSecond} ${newThird}`).replace(/ +/g, " ").trim();
          return newEnd;
      }

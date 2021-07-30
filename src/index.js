@@ -22,9 +22,11 @@ module.exports = function toReadable (number) {
      if (number <= 999 && number % 100 == 0) {
          return hundreds[Math.floor(number / 100)];
      }
-     else
+     if (number <= 999 && number % 100 != 0)
      {
-         let newHun = hundreds.Math.floor[number / 100] + ' ' + ((readable % 100 > 0) ? toNineteen[readable % 100] : "");
-         return newHun;
+         let newHun = hundreds[Math.floor(number / 100)];
+         let newSecond = tens[number % 100];
+         let newThird = toNineteen[number % 100];
+         return `${newHun} ${newSecond} ${newThird}`;
      }
 }

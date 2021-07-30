@@ -15,8 +15,9 @@ module.exports = function toReadable (number) {
          return tens[number / 10]
      }
      if (number < 100 && number % 10 != 0) {
-         string = tens.Math.floor[number / 10] + ((number % 10 > 0) ? " " + toNineteen[number % 10] : "");
-         return string;
+        string = tens[Math.floor(number / 10)];
+        let secondString = toNineteen[(number % 10)];
+        return `${string} ${secondString}`;
      }
      if (number <= 999 && number % 100 == 0) {
          return hundreds.Math.floor[number / 100]

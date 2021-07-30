@@ -30,4 +30,11 @@ module.exports = function toReadable (number) {
          let newEnd = (`${newHun} ${newSecond}`).replace(/ +/g, " ").trim();
          return newEnd;
      }
+     if (number <= 999 && number % 100 != 0) {
+        let first = hundreds[Math.floor(number / 100)];
+        let second = tens[Math.floor(number / 10) % 10];
+        let third = toNineteen[number % 10];
+        let End = (`${first} ${second} ${third}`).replace(/ +/g, " ").trim();
+        return End;
+     }
 }

@@ -25,8 +25,8 @@ module.exports = function toReadable (number) {
      if (number <= 999 && number % 100 != 0)
      {
          let newHun = hundreds[Math.floor(number / 100)];
-         let newSecond = tens[number % 100];
+         let newSecond = tens[Math.floor(number / 10) % 10];
          let newThird = toNineteen[number % 100];
-         return `${newHun} ${newSecond} ${newThird}`;
+         let newEnd = (`${newHun} ${newSecond} ${newThird}`).replace(/ +/g, " ").trim();
      }
 }

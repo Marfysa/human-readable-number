@@ -20,7 +20,7 @@ module.exports = function toReadable (number) {
         return `${string} ${secondString}`;
      }
      if (number <= 999 && number % 100 == 0) {
-         return hundreds.Math.floor[number / 100]
+         return hundreds[Math.floor(number / 100)];
      }
      else
      {
